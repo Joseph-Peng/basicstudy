@@ -1,5 +1,7 @@
 package offer;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -16,6 +18,7 @@ public class Offer51_数组中的逆序数对 {
     }
 
     private int mergeSort(int low, int high, int[] nums) {
+
         int count = 0;
         if(low>=high) return count;
 
