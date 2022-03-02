@@ -3,6 +3,7 @@ package offer;
 public class Offer53_II0到n减1中缺失的数字 {
 
     // 0 1 2 3 5 6 7 8
+    // 采用二分查找的方式
     public int missingNumber(int[] nums) {
         int i = 0, j = nums.length - 1;
         while (i <= j) {

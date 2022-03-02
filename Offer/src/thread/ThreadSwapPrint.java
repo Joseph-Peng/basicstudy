@@ -8,17 +8,17 @@ public class ThreadSwapPrint {
         Printer printer = new Printer();
         Printer2 printer2 = new Printer2();
 
-        /*Thread t1 = new Thread(printer);
+        Thread t1 = new Thread(printer);
         Thread t2 = new Thread(printer);
 
         t1.start();
-        t2.start();*/
+        t2.start();
 
-        Thread t3 = new Thread(printer2);
+        /*Thread t3 = new Thread(printer2);
         Thread t4 = new Thread(printer2);
 
         t3.start();
-        t4.start();
+        t4.start();*/
 
     }
 }
@@ -33,13 +33,14 @@ class Printer implements Runnable{
                 notify();
                 if (i<100) {
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     ++i;
                     System.out.println(Thread.currentThread().getName()+"---"+i);
                 }else {
+                    //notifyAll();
                     break;
                 }
                 try {
@@ -64,7 +65,7 @@ class Printer2 implements Runnable{
             lock.lock();
             try {
                 condition.signal();
-                Thread.sleep(100);
+                Thread.sleep(50);
                 if (i<100){
                     ++i;
                     System.out.println(Thread.currentThread().getName()+"---"+i);
