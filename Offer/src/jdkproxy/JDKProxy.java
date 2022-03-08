@@ -26,6 +26,7 @@ public class JDKProxy implements InvocationHandler {
         JDKProxy proxy = new JDKProxy();
         UserManager userManager = (UserManager) proxy.getJDKProxy(new UserManagerImpl());
         userManager.addUser("xxx","xxx");
+        userManager.delUser("xxx");
     }
 
 }
