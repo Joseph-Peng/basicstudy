@@ -10,6 +10,9 @@ public class Offer48_最长不含重复字符的子字符串 {
         System.out.println(new Offer48_最长不含重复字符的子字符串().lengthOfLongestSubstring2("abcabcbb"));
     }
 
+    // pwwkew
+    // left 0
+    // left = 2  w 2
     public int lengthOfLongestSubstring(String s) {
         if(null == s || s.length() == 0) return 0;
         Map<Character,Integer> dict = new HashMap<>();

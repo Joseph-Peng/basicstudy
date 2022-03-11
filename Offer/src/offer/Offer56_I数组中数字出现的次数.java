@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Offer56_I数组中数字出现的次数 {
 
     public static void main(String[] args) {
-        int nums[] = {1,1,2,2,3,4,4,6,6,7,7,8,8,9,9,10};
+        int nums[] = {1,2,2,3,4,4,6,6,7,7,8,8,9,9,10,10};
         System.out.println(Arrays.toString(singleNumbers(nums)));
     }
 
