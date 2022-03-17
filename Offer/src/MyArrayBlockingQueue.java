@@ -64,5 +64,4 @@ public class MyArrayBlockingQueue<E> {
         full.signalAll();
         return e;
     }
-
 }
