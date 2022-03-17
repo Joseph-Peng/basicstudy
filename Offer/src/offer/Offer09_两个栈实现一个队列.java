@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class Offer09_两个栈实现一个队列 {
 }
 
-class CQueue{
+class CQueue<T>{
 
     public Deque<Integer> stack1;
     public Deque<Integer> stack2;
