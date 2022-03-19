@@ -1,4 +1,4 @@
-package nowcoder;
+package nowcoder.dp;
 
 public class 股票的最大利润2 {
 
