@@ -1,4 +1,4 @@
-package offer;
+package offer.tree;
 
 public class Offer26_树的子结构 {
 

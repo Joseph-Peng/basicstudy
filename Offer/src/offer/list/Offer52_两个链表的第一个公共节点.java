@@ -1,4 +1,4 @@
-package offer;
+package offer.list;
 
 public class Offer52_两个链表的第一个公共节点 {
 

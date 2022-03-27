@@ -1,4 +1,4 @@
-package offer;
+package offer.tree;
 
 public class Offer68_二叉搜索树的最近公共祖先 {
 

@@ -1,4 +1,4 @@
-package offer;
+package offer.list;
 
 public class Offer25_合并两个排序的链表 {
 

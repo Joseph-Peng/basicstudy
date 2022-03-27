@@ -1,4 +1,4 @@
-package offer;
+package offer.tree;
 
 public class Offer55_II平衡二叉树 {
 

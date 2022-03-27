@@ -1,4 +1,4 @@
-package offer;
+package offer.list;
 
 public class Offer24_反转链表 {
 
