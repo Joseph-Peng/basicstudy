@@ -10,6 +10,7 @@ public class 组合 {
     }
 
     public static List<List<Integer>> res = new ArrayList<>();
+
     public static List<List<Integer>> combine(int n, int k) {
         List<Integer> path = new ArrayList<>();
         backTrace(1,n,k,path);
