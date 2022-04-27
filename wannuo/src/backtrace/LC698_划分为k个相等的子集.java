@@ -18,6 +18,7 @@ public class LC698_划分为k个相等的子集 {
 
     public boolean flag = false;
 
+    // 参数：idx、bts
     public void backtrace(int idx, int[] bts, int[] nums, int k, int target){
         if (idx < 0 || flag){
             flag = true;
