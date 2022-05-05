@@ -3,7 +3,7 @@ package lc000to050;
 public class LC045_跳跃游戏2 {
 
     public static void main(String[] args) {
-        int[] nums = {4,1,1,3,1,1,1};
+        int[] nums = {2,3,1,1,4};
         System.out.println(jump(nums));
     }
 
