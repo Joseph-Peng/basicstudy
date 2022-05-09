@@ -8,20 +8,39 @@ public class LC322_零钱兑换 {
     // 给定一个整数数组coins 以及
     // 一个amount表示总金额数
 
-    // 解法2，使用dp数组迭代
-    public int coinChange(int[] coins, int amount) {
-        int[] dp = new int[amount+1];
-        // 初始化dp数组，全部给amount+1 //注意不能给上Integer.MAX_VALUE，dp[i-coin]+1时会溢出
-        Arrays.fill(dp,amount+1);
-        dp[0] = 0;
-        for (int i = 1;i<=amount;++i){
-            for (int coin : coins){
-                if (i>=coin){
-                    dp[i] = Math.min(dp[i],dp[i-coin]+1);
-                }
+    /*
+    式子：f(i,j) = Math.min(f(i-1, j), f(i, j-coins[i]) + 1)
+    base case: 第一行   dp[0][0] = 0; 其他的 dp[0][j] = 10001;
+    规模: i->coins.length   j->amount
+    遍历顺序 : i->coins.length   j->amount
+     */
+    public int coinChange2(int[] coins, int amount) {
+        int[][] dp = new int[coins.length + 1][amount + 1];
+        Arrays.fill(dp[0], amount+1);
+        dp[0][0] = 0;
+        for(int i = 1; i <= coins.length; ++i){
+            for(int j = 0; j <= amount; ++j){
+                if(j >= coins[i-1])
+                    dp[i][j] = Math.min(dp[i-1][j], dp[i][j-coins[i-1]] + 1);
+                else
+                    dp[i][j] = dp[i-1][j];
             }
         }
-        return dp[amount]>amount?-1:dp[amount];
+        return dp[coins.length][amount] == (amount+1) ? -1 : dp[coins.length][amount];
+    }
+    /*
+    压缩
+     */
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, amount+1);
+        dp[0] = 0;
+        for(int i = 1; i <= coins.length; ++i){
+            for(int j = coins[i-1]; j <= amount; ++j){
+                    dp[j] = Math.min(dp[j], dp[j-coins[i-1]] + 1);
+            }
+        }
+        return dp[amount] == (amount+1) ? -1 : dp[amount];
     }
 
     // 解法1，自顶向下的，带备忘录的递归解法
