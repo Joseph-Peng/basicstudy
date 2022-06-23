@@ -22,10 +22,10 @@ public class Offer54_二叉搜索树的第K大个节点 {
 
     private void dfs(TreeNode root) {
         if (root == null) return;
-        dfs(root.left);
+        dfs(root.right);
         if (k == 0) return;
         if (--k == 0) res = root.val;
-        dfs(root.right);
+        dfs(root.left);
     }
 
 

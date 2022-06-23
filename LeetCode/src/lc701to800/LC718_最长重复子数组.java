@@ -1,4 +1,4 @@
-package lc701to750;
+package lc701to800;
 
 public class LC718_最长重复子数组 {
 

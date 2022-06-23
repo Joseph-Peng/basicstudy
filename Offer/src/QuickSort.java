@@ -18,6 +18,7 @@ public class QuickSort {
                 while (i < j && arr[i] <= temp) ++i;
                 swap(arr, i, j);
             }
+            // 此时i位置的数一定小于基准值，这也是为什么快速排序要从右边开始的原因
             swap(arr, i, low);
             quickSort(arr, low, i - 1);
             quickSort(arr, i + 1, high);

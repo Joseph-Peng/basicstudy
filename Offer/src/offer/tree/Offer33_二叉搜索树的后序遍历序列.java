@@ -26,7 +26,7 @@ public class Offer33_二叉搜索树的后序遍历序列 {
     public boolean verifyPostorder(int[] postorder) {
         int root = Integer.MAX_VALUE;
         Deque<Integer> stack = new LinkedList<>();
-        for(int i = 0; i < postorder.length; ++i){
+        for(int i = postorder.length - 1; i >= 0; --i){
             if (postorder[i] > root) return false;
             // 如果当前节点大于栈顶节点说明还在根->右的逻辑，则需要继续压栈
             // 如果当前节点小于栈顶节点说明根右的逻辑已经遍历完成，来到了左子树
