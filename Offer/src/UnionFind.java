@@ -1,33 +1,38 @@
 public class UnionFind {
 
-    public static int[] parent = new int[10000001];
-    public static int[] personNums = new int[10000001];
+    int[] parent, rank;
+    int size;
+    int nums;
 
-    public UnionFind(){
-        for(int i = 1; i <= 10000000; i++){
+    public UnionFind(int size) {
+        this.size = size;
+        nums = size;
+        parent = new int[size];
+        rank = new int[size];
+
+        for (int i = 0; i < size; i++) {
             parent[i] = i;
-            personNums[i] = 1;
+            rank[i] = 1;
         }
     }
 
-    /**
-     * 路径分裂 (Path Spliting)
-     * 在find过程, 使路径上的每个节点都指向其祖父节点
-     */
-    public int find(int x){
-        while (x!=parent[x]){
-            parent[x] = parent[parent[x]];
-            x = parent[x];
+    public int find(int x) {
+        if(parent[x] == x) return x;
+        else{
+            parent[x] = find(parent[x]);
+            return parent[x];
         }
-        return x;
+        // 可以简化为下面一句
+        // return x == parent[x] ? x : (parent[x] = find(parent[x]));
     }
 
-    public void union(int x, int y){
-        int rootX = find(x);
-        int rootY = find(y);
-        if (rootX == rootY) return;
-        parent[rootX] = rootY;
-        personNums[rootX] += personNums[rootY];
+    public void union(int a, int b) {
+        int pa = find(a);
+        int pb = find(b);
+        if (pa != pb) nums--;
+        if (rank[pa] <= rank[pb]) parent[pa] = pb;
+        else parent[pb] = pa;
+        if (rank[pa] == rank[pb] && pa != pb) rank[pb]++;
     }
 
 }
