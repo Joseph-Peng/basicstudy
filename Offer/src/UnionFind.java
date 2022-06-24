@@ -35,4 +35,15 @@ public class UnionFind {
         if (rank[pa] == rank[pb] && pa != pb) rank[pb]++;
     }
 
+    public void test(int x){
+        int f = x;
+        while (parent[f] != f){
+            if(parent[f] == x){
+                parent[f] = f;
+                break;
+            }
+            f = parent[f];
+        }
+    }
+
 }
