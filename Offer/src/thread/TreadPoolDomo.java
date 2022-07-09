@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class TreadPoolDomo {
 
     public static void main(String[] args) {
-//        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor()
+        //ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor()
         ExecutorService executor = Executors.newSingleThreadExecutor();
     }
 }
