@@ -1,4 +1,4 @@
-package lc501to550;
+package lc501to700;
 
 public class LC516_最长回文子序列 {
 
