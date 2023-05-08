@@ -66,3 +66,28 @@ public class LC1419_数青蛙 {
         return res;
     }
 }
+
+
+/*
+docker run \
+  --name mysql \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -v /tmp/mysql/data:/var/lib/mysql  \
+  -v /tmp/mysql/conf/hmy.cnf:/etc/mysql/conf.d/hmy.cnf  \
+  -p 3306:3306  \
+  -d mysql:5.7.25
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
