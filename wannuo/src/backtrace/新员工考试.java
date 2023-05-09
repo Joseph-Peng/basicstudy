@@ -26,7 +26,7 @@ public class 新员工考试 {
     // 参数：分数（score）、错题数（cnt）、当前题号（idx）
     public static void backtrace(int score, int cnt, int idx, int[] scores, int N) {
         // 出口
-        if (cnt == 3 || score == N || idx >= 25) {
+        if (cnt == 3 || score >= N || idx >= 25) {
             if (score == N) res++;
             return;
         }
@@ -40,7 +40,7 @@ public class 新员工考试 {
 
     public static int backtrace1(int score, int cnt, int idx, int[] scores, int N) {
         // 出口
-        if (cnt == 3 || score == N || idx >= 25) {
+        if (cnt == 3 || score >= N || idx >= 25) {
             if (score == N) return 1;
             return 0;
         }
